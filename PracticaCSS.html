@@ -16,39 +16,69 @@
             text-align: center;
         }
 
-         .segunda{
-             font-family: 'Courier New', Courier, monospace;
-         }
+        .segunda{
+            font-family: 'Courier New', Courier, monospace;
+            text-align: left;
+        }
 
-         button {
-             background-color: teal;
-             border-color: white;
-             color: white;
-             font-size: 20px;
-             block-size: 35px;
-         }
-         [id~="menu"] {
-             background-color: teal;
-         }
+        a {
+            font-size: 25px;
+            margin-right: 10px;
+            color: white;
+            border-color: white;
+            border-style: solid;
+            text-decoration: none;
+        }
 
-         #p1 {
-             font-family: Arial, Helvetica, sans-serif;
-             font-size: 20px;
-             text-align: justify;
-             border: 2px;
-             border-style: solid;
-             border-color: black;
-             padding: 0px 0px 30px 0px;
-             border-top: 0px;
-             border-left: 0px;
-             border-right: 0px;
-         }
+        button {
+            background-color: teal;
+            border-color: white;
+            color: white;
+            font-size: 20px;
+            block-size: 35px;
+        }
+        [id~="menu"] {
+            height: 40px;
+            background-color: teal;
+            position: sticky;
+            top: 0px;
+        }
+
+        #p1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            text-align: justify;
+            border: 2px;
+            border-style: solid;
+            border-color: black;
+            padding: 0px 0px 30px 0px;
+            border-top: 0px;
+            border-left: 0px;
+            border-right: 0px;
+        }
+
+        [id~="tabla"] {
+            text-align: center;
+            width: 25%;
+            font-size: 25px;
+        }
     </style>
+
+    <script>
+        function cambiar(id, imagen1, imagen2){
+            imagen=document.getElementById(id);
+            if(imagen.src==imagen2){
+                imagen.src=imagen1;
+            }else{
+                imagen.src=imagen2;
+            }
+        }
+    </script>
 </head>
 <body>
     <img src="Logo1.png" alt="Logo">
 
-    <img src="Logo3.png" alt="Logo" style="position: fixed; top: 20px; right: 0px;">
+    <img src="Logo3.png" alt="Logo" style="position: absolute; top: 20px; right: 0px;">
 
     <h1 class="primera">Ejercicio de Repaso</h1>
 
@@ -57,14 +87,16 @@
     <table id="menu">
         <tr>
             <th>
-                <button style="margin-left: 1000px; ">Texto</button>
-                <button >Tablas</button>
-                <button>Imágenes</button>
+                <a href="#texto" style="margin-left: 1590px;">Texto</a>
+                <a href="#tablas">Tablas</a>
+                <a href="#link">Imágenes</a>
             </th>
         </tr>
     </table>
 
-    <h2 class="segunda">Ejemplo de texto</h2>
+    <br><br>
+    <h2 class="segunda" id="texto">Ejemplo de texto</h2>
+    <br><br>
 
     <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt maxime recusandae vitae cumque. 
         Delectus deserunt nostrum ad perferendis quia suscipit iste eaque totam exercitationem, veritatis 
@@ -75,11 +107,23 @@
         nostrum ad perferendis quia suscipit iste eaque totam exercitationem, veritatis provident nobis 
         ipsam magni quaerat.Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt maxime 
         recusandae vitae cumque. Delectus deserunt nostrum ad perferendis quia suscipit iste eaque totam 
+        exercitationem, veritatis provident nobis ipsam magni quaerat.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt maxime recusandae vitae cumque. 
+        Delectus deserunt nostrum ad perferendis quia suscipit iste eaque totam exercitationem, veritatis 
+        provident nobis ipsam magni quaerat.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Incidunt maxime recusandae vitae cumque. Delectus deserunt nostrum ad perferendis quia suscipit 
+        iste eaque totam exercitationem, veritatis provident nobis ipsam magni quaerat.Lorem ipsum dolor 
+        sit amet consectetur adipisicing elit. Incidunt maxime recusandae vitae cumque. Delectus deserunt 
+        nostrum ad perferendis quia suscipit iste eaque totam exercitationem, veritatis provident nobis 
+        ipsam magni quaerat.Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt maxime 
+        recusandae vitae cumque. Delectus deserunt nostrum ad perferendis quia suscipit iste eaque totam 
         exercitationem, veritatis provident nobis ipsam magni quaerat.</p>
     
-    <h2 class="segunda">Ejemplo de Tablas</h2>
+    <br><br>
+    <h2 class="segunda" id="tablas">Ejemplo de Tablas</h2>
+    <br><br>
 
-    <table border="1" style="text-align: center;">
+    <table border="1" id="tabla">
         <tr>
             <th>Frameworks</th>
             <th>Front End</th>
@@ -101,12 +145,15 @@
         </tr>
     </table>
 
-    <h2 class="segunda">Ejemplo de Links</h2>
+    <br><br><br><br>
+    <h2 class="segunda" id="link">Ejemplo de Links</h2>
 
-    <button style="border-radius: 50px;">Clic aqui para cambiar de imágen</button>
+    <div>
+        <button style="border-radius: 50px;" id="Cambio" onclick="cambiar('imagenes', 'uaslp.jpg', 'Logo2.jpg');">Clic aqui para cambiar de imágen</button>
+        <br>
+        <img src="uaslp.jpg" alt="" id="imagenes">
+    </div>
 
-    <br>
-    <img src="uaslp.jpg" alt="uaslp">
-
+    <br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
